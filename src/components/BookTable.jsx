@@ -2,12 +2,12 @@
 import PropTypes from 'prop-types';
 import SortButton from './SortButton';
 
-const BookTable = ({ books, loading, onSort, sortConfig }) => {
+const BookTable = ({ books, loading, onSort, sortConfig, loadingMessage }) => {
   if (loading) {
     return <div className=' flex items-start justify-center  '>
 
       <div className='flex items-end gap-1 text-5xl mt-20 text-slate-700'>
-        <span className='mr-3'>Please wait while searching</span>
+        <span className='mr-3'>{loadingMessage}</span>
         <div className='h-3 w-3 bg-slate-700 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
         <div className='h-3 w-3 bg-slate-700 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
         <div className='h-3 w-3 bg-slate-700 rounded-full animate-bounce'></div>
@@ -80,6 +80,7 @@ const BookTable = ({ books, loading, onSort, sortConfig }) => {
 BookTable.propTypes = {
   books: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
+  loadingMessage: PropTypes.string.isRequired,
   onSort: PropTypes.func.isRequired,
   sortConfig: PropTypes.object.isRequired,
 };

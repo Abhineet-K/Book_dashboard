@@ -8,6 +8,7 @@ const App = () => {
   const [books, setBooks] = useState([]);
   const [displayedBooks, setDisplayedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMessage, setLoadingMessage] = useState("Loading Layout");
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
@@ -47,6 +48,7 @@ const App = () => {
     }
 
     setLoading(false);
+    setLoadingMessage("Please wait while searching")
   };
 
   const updateDisplayedBooks = () => {
@@ -86,7 +88,7 @@ const App = () => {
           <h1 className="text-2xl font-bold mb-4 text-gray-200">Book Dashboard</h1>
           <SearchBar onSearch={handleSearch} />
         </div>
-        <BookTable books={displayedBooks} loading={loading} onSort={handleSort} sortConfig={sortConfig} />
+        <BookTable books={displayedBooks} loading={loading} loadingMessage={loadingMessage} onSort={handleSort} sortConfig={sortConfig} />
       </div>
       {!loading && <Pagination currentPage={page} totalRecords={books.length} limit={limit} onPageChange={setPage} onLimitChange={setLimit} />}
     </div>

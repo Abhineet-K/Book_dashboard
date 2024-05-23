@@ -18,7 +18,7 @@ This project is a React application that provides a dashboard to display book re
 
 ## Demo
 
-Link to demo : [Click Here]() 
+Link to demo : [Click Here](https://book-dashboard-one.vercel.app/) 
 
 
 ## Screenshots
@@ -69,18 +69,12 @@ git clone https://github.com/Abhineet-K/Book_dashboard.git
 
 ## API Reference
 
-#### Get all Books
+**Get All Books :** <br/>
+`Search Endpoint:` [https://openlibrary.org/search.json?q={Book_Title}](https://openlibrary.org/search.json?q=the%20lord%20of%20the%20rings) <br/>
 
-```http
-  GET openlibrary.org/search.json?q=${query}
-```
+**Get Book's Author :** <br/>
+`Author Endpoint:` [https://openlibrary.org/search/authors.json?q={Author_Name}](https://openlibrary.org/search/authors.json?q=j%20k%20rowling) <br/>
 
-
-#### Get Book's Author
-
-```http
-  GET openlibrary.org/search/authors.json?q=${book.author_name[0]}
-```
 
 
 ## License
